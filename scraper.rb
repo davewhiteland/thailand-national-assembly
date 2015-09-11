@@ -79,10 +79,13 @@ def scrape_senate_page(url, page_number, honorifics)
     if senate_id.match(/^\d+$/)
       raw_name = tds[2].text.tidy
       name, honorific = split_honorific_and_name(raw_name, honorifics)
+      image_url = tds[1].xpath('./img/@src').text.tidy
+      # TODO @tmtmtm suggests using
+      # TODO something like image[/(\d+).JPG/, 1] for id
       data = { 
         id: senate_id,
         name: name,
-        image: tds[1].xpath('./img/@src').text.tidy,
+        image: image_url,
         title: honorific,
         party: $thai_party,
         term: $thai_term
