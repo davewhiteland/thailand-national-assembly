@@ -49,7 +49,7 @@ def scrape_wiki_list_for_honorifics(url)
     # we're ignoring name because we get them from the Senate's own site,
     # but in case you want it: name = li.css('a[1]')a.text  :-)
   end
-  return honorifics.uniq!.sort_by!{|x| x.length}.reverse
+  return honorifics.uniq.sort_by{|x| x.length}.reverse
 end
 
 def split_honorific_and_name(raw_name, honorifics)
