@@ -44,7 +44,7 @@ def scrape_wiki_list_for_honorifics(url)
   noko = noko_for(url)
   honorifics = []
   thai_id=".E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B9.81.E0.B8.95.E0.B9.88.E0.B8.87.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.A3.E0.B8.AD.E0.B8.9A.E0.B9.81.E0.B8.A3.E0.B8.81"
-  noko.xpath("//h3[span[@id=\"#{thai_id}\"]]/following-sibling::table[1]//ol/li[a]").each do |li|
+  noko.xpath(%Q{//h3[span[@id="#{thai_id}"]]/following-sibling::table[1]//ol/li[a]}).each do |li|
     honorifics << li.xpath('./text()[not(preceding-sibling::a)]').text().tidy
     # we're ignoring name because we get them from the Senate's own site,
     # but in case you want it: name = li.css('a[1]')a.text  :-)
