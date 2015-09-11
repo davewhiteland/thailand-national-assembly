@@ -3,8 +3,9 @@
 
 require 'scraperwiki'
 require 'nokogiri'
-require 'open-uri/cached'
-OpenURI::Cache.cache_path = '.cache'
+# require 'open-uri/cached'
+# OpenURI::Cache.cache_path = '.cache'
+require 'open-uri'
 
 # thai_senate URL gives photos and senate numerical IDs
 # note "{PAGE-NUMBER}" placemarker will be replaced on the fly
