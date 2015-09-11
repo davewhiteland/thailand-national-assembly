@@ -48,7 +48,10 @@ def scrape_wiki_list_for_honorifics(url)
   noko.xpath(%Q{//h3[span[@id="#{thai_id}"]]/following-sibling::table[1]//ol/li[a]}).each do |li|
     honorifics << li.xpath('./text()[not(preceding-sibling::a)]').text().tidy
     # we're ignoring name because we get them from the Senate's own site,
-    # but in case you want it: name = li.css('a[1]')a.text  :-)
+    # name = li.css('a[1]')a.text
+    # but title is handy for wikinames, so store that separately
+    title = li.xpath('a[not(@class="new")]/@title').text
+    ScraperWiki.save_sqlite([:name], {name: title}, 'wikinames')
   end
   return honorifics.uniq.sort_by{|x| x.length}.reverse
 end
