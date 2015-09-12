@@ -58,9 +58,9 @@ end
 
 def split_honorific_and_name(raw_name, honorifics)
   honorific = nil
-  name = raw_name
+  name = raw_name.tidy.strip
   honorifics.each do |hon|
-    if name.sub!(hon, '')
+    if name.sub!(/^#{hon}/, '')
       honorific = hon
       break
     end
