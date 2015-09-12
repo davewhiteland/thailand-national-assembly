@@ -99,10 +99,12 @@ end
 
 def get_number_of_senate_pages(url)
   url = get_senate_url(url, 1) # page number 1
-  puts "--> scrape_senate_page(#{url})"
+  puts "--> get_number_of_senate_pages(#{url})"
   noko = noko_for(url)
   page_menu = noko.xpath("//*[text()[contains(.,'หน้า')]]")
-  return page_menu.xpath('./a[last()]').text().to_i
+  last_page_number = page_menu.xpath('./a[last()]').text().to_i
+  puts "    last page number: #{last_page_number}"
+  return last_page_number
 end
 
 number_of_senate_pages = get_number_of_senate_pages(thai_senate_url)
