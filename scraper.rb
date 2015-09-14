@@ -86,7 +86,7 @@ def scrape_senate_page(url, page_number, honorifics)
         id: senate_id,
         name: name,
         image: image_url,
-        title: honorific,
+        honorific_prefix: honorific,
         party: $thai_party,
         term: $thai_term
       }
