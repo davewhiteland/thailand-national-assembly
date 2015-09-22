@@ -88,7 +88,8 @@ def scrape_senate_page(url, page_number, honorifics)
         image: image_url,
         honorific_prefix: honorific,
         party: $thai_party,
-        term: $thai_term
+        term: $thai_term,
+        source: url
       }
       ScraperWiki.save_sqlite([:id], data)
       qty_members+=1
