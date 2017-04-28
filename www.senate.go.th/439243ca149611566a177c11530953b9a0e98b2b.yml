@@ -1,0 +1,47 @@
+---
+request:
+  method: get
+  uri: http://www.senate.go.th/w3c/senate/senator.php?id=18&orby=&orrg=ASC&page=1
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - "*/*"
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Date:
+    - Fri, 28 Apr 2017 14:09:18 GMT
+    X-Powered-By:
+    - PHP/5.3.3
+    P3p:
+    - CP="CAO PSA OUR"
+    Set-Cookie:
+    - PHPSESSID=4hudplnbrd38c69kd22c76s4c6; path=/
+    - TS01c0714d=0157572c4f7a67ae4992d20b73620db294214b9510bdf75731d727824b9c67cff9c56a9027b4585ae0560506958e541af2ea2b219e;
+      Path=/
+    Expires:
+    - Thu, 19 Nov 1981 08:52:00 GMT
+    Cache-Control:
+    - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+    Pragma:
+    - no-cache
+    Connection:
+    - close
+    Content-Type:
+    - text/html; charset=UTF-8
+    Content-Language:
+    - en-US
+    Transfer-Encoding:
+    - chunked
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Fri, 28 Apr 2017 13:10:44 GMT
