@@ -1,0 +1,76 @@
+---
+request:
+  method: get
+  uri: https://th.wikipedia.org/wiki/%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%99%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4_(%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2)_%E0%B8%9E.%E0%B8%A8._2557
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - "*/*"
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Date:
+    - Fri, 28 Apr 2017 13:10:37 GMT
+    Content-Type:
+    - text/html; charset=UTF-8
+    Content-Length:
+    - '40376'
+    Connection:
+    - keep-alive
+    Server:
+    - mw2227.codfw.wmnet
+    X-Powered-By:
+    - HHVM/3.12.14
+    Vary:
+    - Accept-Encoding,Cookie,Authorization
+    X-Ua-Compatible:
+    - IE=Edge
+    Content-Language:
+    - th
+    P3p:
+    - CP="This is not a P3P policy! See https://th.wikipedia.org/wiki/%E0%B8%9E%E0%B8%B4%E0%B9%80%E0%B8%A8%E0%B8%A9:CentralAutoLogin/P3P
+      for more info."
+    X-Content-Type-Options:
+    - nosniff
+    Last-Modified:
+    - Sat, 22 Apr 2017 06:56:40 GMT
+    Backend-Timing:
+    - D=76060 t=1493209002526568
+    X-Varnish:
+    - 339086067 79794785, 808268285 29197659, 177178282
+    Via:
+    - 1.1 varnish-v4, 1.1 varnish-v4, 1.1 varnish-v4
+    Age:
+    - '176035'
+    X-Cache:
+    - cp2013 hit/2, cp3033 hit/6, cp3032 miss
+    X-Cache-Status:
+    - hit
+    Strict-Transport-Security:
+    - max-age=31536000; includeSubDomains; preload
+    Set-Cookie:
+    - GeoIP=GB:ENG:Bristol:51.45:-2.58:v4; Path=/; secure; Domain=.wikipedia.org
+    - WMF-Last-Access-Global=28-Apr-2017;Path=/;Domain=.wikipedia.org;HttpOnly;secure;Expires=Tue,
+      30 May 2017 12:00:00 GMT
+    - WMF-Last-Access=28-Apr-2017;Path=/;HttpOnly;secure;Expires=Tue, 30 May 2017
+      12:00:00 GMT
+    X-Analytics:
+    - ns=0;page_id=636609;https=1;nocookies=1
+    X-Client-Ip:
+    - 82.38.191.188
+    Cache-Control:
+    - private, s-maxage=0, max-age=0, must-revalidate
+    Accept-Ranges:
+    - bytes
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Fri, 28 Apr 2017 13:10:37 GMT
