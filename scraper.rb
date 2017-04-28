@@ -79,13 +79,13 @@ def scrape_senate_page(url, page_number)
     tds = tr.css('td')
     senate_id = tds[0].text.tidy
     next unless senate_id =~ /^\d+$/
+
     raw_name = tds[2].text.tidy
     name, honorific = split_honorific_and_name(raw_name, honorifics)
     image_url = tds[1].xpath('./img/@src').text.tidy
-    # TODO: @tmtmtm suggests using
-    # TODO something like image[/(\d+).JPG/, 1] for id
+
     data = {
-      id:               senate_id,
+      id:               image_url[/([\d_]+).JPG/, 1].sub(/^_/, ''),
       name:             name,
       image:            image_url,
       honorific_prefix: honorific,
