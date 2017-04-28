@@ -23,9 +23,6 @@ wikipedia_url = URI.encode('https://th.wikipedia.org/wiki/สภานิติ�
 # was appointed when the coup happened in 2557 BE (Thai calendar), that
 # seems like a value to use?
 
-$thai_party = 'NCPO'
-$thai_term = '2557'
-
 def noko_for(url)
   Nokogiri::HTML(open(url).read)
 end
@@ -84,8 +81,8 @@ def scrape_senate_page(url, page_number, honorifics)
       name:             name,
       image:            image_url,
       honorific_prefix: honorific,
-      party:            $thai_party,
-      term:             $thai_term,
+      party:            'NCPO',
+      term:             '2557',
       source:           url,
     }
     ScraperWiki.save_sqlite([:id], data)
