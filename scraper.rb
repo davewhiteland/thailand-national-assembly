@@ -92,18 +92,11 @@ def scrape_senate_page(url, page_number, honorifics)
 end
 
 def number_of_senate_pages(url)
-  url = senate_url(url, 1) # page number 1
-  puts "--> get_number_of_senate_pages(#{url})"
-  noko = noko_for(url)
-  page_menu = noko.xpath("//*[text()[contains(.,'หน้า')]]")
-  last_page_number = page_menu.xpath('./a[last()]').text.to_i
-  puts "    last page number: #{last_page_number}"
-  last_page_number
+  url = senate_url(url, 1)
+  noko_for(url).xpath("//*[text()[contains(.,'หน้า')]]/a[last()]").text.to_i
 end
 
-number_of_senate_pages = number_of_senate_pages(thai_senate_url)
-
 honorifics = scrape_wiki_list_for_honorifics(wikipedia_url)
-(1..number_of_senate_pages).each do |page_number|
+(1..number_of_senate_pages(thai_senate_url)).each do |page_number|
   scrape_senate_page(thai_senate_url, page_number, honorifics)
 end
