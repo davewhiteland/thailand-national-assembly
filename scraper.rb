@@ -64,9 +64,8 @@ end
 
 def scrape_senate_page(url, page_number, honorifics)
   url = senate_url(url, page_number)
-  puts "--> scrape_senate_page(#{url})"
   noko = noko_for(url)
-  qty_members = 0
+
   noko.xpath('//div[@id="maincontent"]//table[1]/tr[td]').each do |tr|
     tds = tr.css('td')
     senate_id = tds[0].text.tidy
@@ -85,10 +84,9 @@ def scrape_senate_page(url, page_number, honorifics)
       term:             '2557',
       source:           url,
     }
+    # puts data.reject { |k, v| v.to_s.empty? }.sort_by { |k, v| k }.to_h
     ScraperWiki.save_sqlite([:id], data)
-    qty_members += 1
   end
-  puts "    members on this page: #{qty_members}"
 end
 
 def number_of_senate_pages(url)
