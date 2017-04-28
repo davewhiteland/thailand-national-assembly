@@ -27,7 +27,7 @@ def noko_for(url)
   Nokogiri::HTML(open(url).read)
 end
 
-def get_senate_url(url, page_number)
+def senate_url(url, page_number)
   url.sub('{PAGE-NUMBER}', page_number.to_s)
 end
 
@@ -63,7 +63,7 @@ def split_honorific_and_name(raw_name, honorifics)
 end
 
 def scrape_senate_page(url, page_number, honorifics)
-  url = get_senate_url(url, page_number)
+  url = senate_url(url, page_number)
   puts "--> scrape_senate_page(#{url})"
   noko = noko_for(url)
   qty_members = 0
@@ -91,8 +91,8 @@ def scrape_senate_page(url, page_number, honorifics)
   puts "    members on this page: #{qty_members}"
 end
 
-def get_number_of_senate_pages(url)
-  url = get_senate_url(url, 1) # page number 1
+def number_of_senate_pages(url)
+  url = senate_url(url, 1) # page number 1
   puts "--> get_number_of_senate_pages(#{url})"
   noko = noko_for(url)
   page_menu = noko.xpath("//*[text()[contains(.,'หน้า')]]")
@@ -101,7 +101,7 @@ def get_number_of_senate_pages(url)
   last_page_number
 end
 
-number_of_senate_pages = get_number_of_senate_pages(thai_senate_url)
+number_of_senate_pages = number_of_senate_pages(thai_senate_url)
 
 honorifics = scrape_wiki_list_for_honorifics(wikipedia_url)
 (1..number_of_senate_pages).each do |page_number|
