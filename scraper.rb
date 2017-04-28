@@ -55,7 +55,7 @@ def wikipedia_honorifics
   wikinames = noko.xpath('.//ol//li//a[not(@class="new")]/@title').map(&:text).map { |n| {name: n} }
   ScraperWiki.save_sqlite([:name], wikinames, 'wikinames')
 
-  noko.xpath('.//ol//li[a]').map { |n| n.children.first }.map(&:text).uniq
+  noko.xpath('.//ol//li[a]').map { |n| n.children.first }.map(&:text).map(&:tidy).uniq
 end
 
 def split_honorific_and_name(raw_name, honorifics)
