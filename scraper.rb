@@ -96,6 +96,8 @@ def number_of_senate_pages(url)
   noko_for(url).xpath("//*[text()[contains(.,'หน้า')]]/a[last()]").text.to_i
 end
 
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
+
 honorifics = scrape_wiki_list_for_honorifics(wikipedia_url)
 (1..number_of_senate_pages(thai_senate_url)).each do |page_number|
   scrape_senate_page(thai_senate_url, page_number, honorifics)
