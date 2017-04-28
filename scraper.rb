@@ -2,11 +2,13 @@
 # encoding: utf-8
 # frozen_string_literal: true
 
+require 'pry'
+require 'scraped'
 require 'scraperwiki'
-require 'nokogiri'
-# require 'open-uri/cached'
-# OpenURI::Cache.cache_path = '.cache'
-require 'open-uri'
+
+require 'open-uri/cached'
+OpenURI::Cache.cache_path = '.cache'
+# require 'scraped_page_archive/open-uri'
 
 # thai_senate URL gives photos and senate numerical IDs
 # note "{PAGE-NUMBER}" placemarker will be replaced on the fly
@@ -23,12 +25,6 @@ wikipedia_url = URI.encode('https://th.wikipedia.org/wiki/สภานิติ�
 
 $thai_party = 'NCPO'
 $thai_term = '2557'
-
-class String
-  def tidy
-    gsub(/[[:space:]]+/, ' ').strip
-  end
-end
 
 def noko_for(url)
   Nokogiri::HTML(open(url).read)
