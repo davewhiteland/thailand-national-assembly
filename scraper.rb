@@ -12,7 +12,7 @@ OpenURI::Cache.cache_path = '.cache'
 
 # thai_senate URL gives photos and senate numerical IDs
 # note "{PAGE-NUMBER}" placemarker will be replaced on the fly
-thai_senate_url = 'http://www.senate.go.th/w3c/senate/senator.php?id=18&page={PAGE-NUMBER}&orby=&orrg=ASC'
+thai_senate_url = 'https://www.senate.go.th/w3c/senate/senator.php?id=18&page={PAGE-NUMBER}&orby=&orrg=ASC'
 
 # Party: currently (2015) the assembly is appointed by the military junta, NCPO
 # The senate website has a term_id but it doesn't seem to map to anything
