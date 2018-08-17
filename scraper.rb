@@ -93,7 +93,7 @@ def scrape_senate_page(url, page_number)
       term:             '2557',
       source:           url,
     }
-    # puts data.reject { |k, v| v.to_s.empty? }.sort_by { |k, v| k }.to_h
+    puts data.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h if ENV['MORPH_DEBUG']
     ScraperWiki.save_sqlite([:id], data)
   end
 end
